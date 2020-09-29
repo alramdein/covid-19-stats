@@ -1,3 +1,11 @@
 .stats-data {
-    align-items: center;
+    text-align: center;
+}
+
+.stats-data > #title {
+    margin-bottom: 0px;
+}
+
+.stats-data > #data {
+    margin-top: 0px;
 }

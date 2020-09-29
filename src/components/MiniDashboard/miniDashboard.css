@@ -1,0 +1,35 @@
+
+.mini-dashboard {
+    width: 1200px;
+    margin: auto;
+    padding: 10px 20px;
+    color: #e8ffc1;
+    background-color: #0278ae;
+    border-radius: 10px;
+}
+
+.detail {
+    display: flex;
+    justify-content: space-between;
+    margin: 0px 100px;
+}
+
+.mini-dashboard > .daily {
+    font-size: 2em;
+}
+
+.detail > .confirmed, .detail >.death, .detail >.recovered{
+    font-size: 1.4em;
+}
+
+.detail > .death #title {
+   color: rgb(248, 0, 0);
+}
+
+.detail > .confirmed #title {
+    color: rgb(200, 255, 0);
+}
+
+.detail > .recovered #title {
+    color: rgb(0, 255, 34);
+} 
