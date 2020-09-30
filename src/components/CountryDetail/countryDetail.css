@@ -1,0 +1,9 @@
+.country-detail {
+    background-color: rgb(55, 55, 255);
+    border-radius: 10px;
+    width: 1100px;
+    padding: 20px;
+    margin: 0px auto;
+    margin-bottom: 50px;
+    color: white;
+}

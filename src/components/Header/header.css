@@ -1,0 +1,10 @@
+.header {
+    display: block;
+    background-color: blue;
+    margin: 0px auto;
+    padding: 10px;
+}
+
+.header > .logo {
+    color: white;
+}

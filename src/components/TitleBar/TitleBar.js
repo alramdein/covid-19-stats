@@ -2,6 +2,7 @@ import './titleBar.css'
 
 class TitleBar extends HTMLElement {
     connectedCallback() {
+        this.text = this.getAttribute("text")
         this.render()
     }
 
@@ -9,7 +10,7 @@ class TitleBar extends HTMLElement {
         this.innerHTML = 
         `
             <div class="title-bar">
-                <h1>COVID-19 Statistic</h1>
+                <h1>${this.text}</h1>
             </div>
         `
     }

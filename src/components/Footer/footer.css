@@ -1,0 +1,11 @@
+.footer {
+    display: block;
+    text-align: center;
+    background-color: blue;
+    margin: 0px auto;
+    padding: 10px;
+}
+
+.footer > .copyright, .footer > a {
+    color: white;
+}
