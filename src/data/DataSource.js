@@ -1,16 +1,28 @@
 import axios from 'axios'
 
 class DataSource {
-    static async getGlobalData() {
+    constructor() {
         this.baseUrl = 'https://covid19.mathdro.id'
+    }
+    
+    async getGlobalData() {
         try {
             const response = await axios.get(`${this.baseUrl}/api`)
             const data = response.data
             return data
         } catch (err) {
-            console.error(`Error message: ${err.message}`)
+            return err
         }
-        
+    }
+
+    async searchCountry(country) {
+        try {
+            const response = await axios.get(`${this.baseUrl}/api/countries/${country}`)
+            const data = response.data
+            return data
+        } catch (err) {
+            return err
+        }
     }
 }
 

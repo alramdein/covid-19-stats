@@ -8,50 +8,88 @@ import './main.css'
 
 import Data from '../../data/DataSource'
 
-const main = () => {
+const main = async () => {
     const mainElement = document.querySelector("#main")
-    const getData = async () => {
-        try {
-            const data = await Data.getGlobalData()
-            return data
-        }catch(err) {
-            console.error(err.message)
-        }
-    }
-    
-    getData().then( data => {
+    const dataSource = new Data()
+
+    const renderMainErrorMsg = () => {
         mainElement.innerHTML = 
         `
-            <header-bar></header-bar>
-            <title-bar 
-                text="COVID-19 Global Statistic">
-            </title-bar>
-            <div class="mini-dashboard">
-                <stats-data
-                    class="confirmed" 
-                    title="Confirmed" 
-                    data=${data.confirmed.value.toLocaleString()}>
-                </stats-data>
-                <stats-data
-                    class="deaths" 
-                    title="Deaths" 
-                    data=${data.deaths.value.toLocaleString()}>
-                </stats-data>
-                <stats-data
-                    class="recovered" 
-                    title="Recovered" 
-                    data=${data.recovered.value.toLocaleString()}>
-                </stats-data>
+            <div class="error-message">
+                <h3>Request failed. Please check your internet connection.</h3>
+                <h3>If the error still occurs, it may be the problem in the API provider used in this project.</h3>
+                <p>This project used an API from https://github.com/mathdroid/covid-19-api. 
+                Please check browser's DevTool for more information.</p>
             </div>
-            <country-detail></country-detail>
-            <footer-bar></footer-bar>
-            
         `
-    })
-    // .catch(err) {
-    //     console.error(err.message)
-    // }
-  
+    }
+
+    /* main html start here */
+    try {
+        const data = await dataSource.getGlobalData()
+
+        const renderResult = data => {
+            mainElement.innerHTML = 
+            `
+                <header-bar></header-bar>
+                <title-bar 
+                    text="COVID-19 Global Statistic">
+                </title-bar>
+                <div class="mini-dashboard">
+                    <stats-data
+                        class="confirmed" 
+                        title="Confirmed" 
+                        data=${data.confirmed.value.toLocaleString()}>
+                    </stats-data>
+                    <stats-data
+                        class="deaths" 
+                        title="Deaths" 
+                        data=${data.deaths.value.toLocaleString()}>
+                    </stats-data>
+                    <stats-data
+                        class="recovered" 
+                        title="Recovered" 
+                        data=${data.recovered.value.toLocaleString()}>
+                    </stats-data>
+                </div>
+                <div class="country-detail-container">
+                    <h2>Detail Per Country</h2>
+                    <search-bar></search-bar>
+                    <country-detail></country-detail>
+                </div>
+                <footer-bar></footer-bar>
+                
+            `
+        }
+        
+        renderResult(data)
+
+        const countryDetail = document.querySelector("country-detail")
+        const searchButton = document.querySelector("search-bar")
+
+        const onClickSearch = async () => {
+            const searchedCountry = searchButton.value
+            try {
+                const countryData = await dataSource.searchCountry(searchedCountry)
+                countryData.countryName = searchedCountry
+                countryDetail.setCountryData = countryData
+            } catch(err) {
+                if(!searchedCountry) {
+                    countryDetail.setErrorMessage = `Search input can't be empty.`
+                    console.error(`Error message: ${err.message}`)
+                } else {
+                    countryDetail.setErrorMessage = `Invalid search keyword or data not available.`
+                    console.error(`Error message: ${err.message}`)
+                }
+            }
+        }
+
+        searchButton.clickEvent = onClickSearch
+
+    } catch(err) {
+        renderMainErrorMsg()
+        console.error(`Error message: ${err.message}`)
+    }
 }
 
 export default main
