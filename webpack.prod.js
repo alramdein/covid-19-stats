@@ -13,7 +13,7 @@ module.exports = merge(common, {
                     {
                         loader: "babel-loader",
                         options: {
-                            presets: ["@babel/preset-env", "@babel/preset-es2015"]
+                            presets: ["@babel/preset-env"]
                         }
                     }
                 ]
