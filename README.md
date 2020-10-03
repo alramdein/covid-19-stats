@@ -3,32 +3,25 @@
 Covid-19-Statistics application created by Alif Ramdani. Data consumed from https://covid19.mathdro.id/ API.
 ## Installation
 
-Use the package manager [npm](https://www.npmjs.com/get-npm) to install zunisha-e-commerce-backend dependencies.
+Use the package manager [npm](https://www.npmjs.com/get-npm) to install `covid-19-stats` dependencies.
 
 ```bash
-npm install express cors mongoose dotenv
+npm install 
 ```
-And install `nodemon` globally to make the development with nodejs easier
-
-```bash
-npm install -g nodemon
-```
+It will install all depencies from `package.json`
 
 ## Run
+### 1. Run in webpack development server
 
-```nodejs
-nodemon server
+```
+npm run start-dev
 ```
 
-## Usage
-### 1. Get All Products
+### 2. Run build with webpack
 ```
-http://localhost:5000/products/
+npm build
 ```
-### 2. Add Product
-```
-http://localhost:5000/products/add
-```
+Build bundle will be stored in `dist` directory in root folder
 
 ## Contributing
 
