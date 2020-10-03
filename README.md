@@ -1,6 +1,9 @@
 # Covid-19-Statistics
 
-Covid-19-Statistics application created by Alif Ramdani. Data consumed from https://covid19.mathdro.id/ API.
+Covid-19-Statistics application to show global COVID-19 statistic and detail per country. Data consumed from https://covid19.mathdro.id/ API. This project using **Webpack** as a *local development server* and to *bundle* files that ready to deploy in production. **Webpack** bundle implementation is demonstrated in https://github.com/alramdein/covid-19-stats-live.
+
+This project live on: https://alramdein.github.io/covid-19-stats-live
+
 ## Installation
 
 Use the package manager [npm](https://www.npmjs.com/get-npm) to install `covid-19-stats` dependencies.
