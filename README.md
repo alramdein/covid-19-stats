@@ -16,6 +16,8 @@ It will install all depencies from `package.json`
 ```
 npm run start-dev
 ```
+Then open `http://localhost:8080/` on your browser. The `8080` port is a default port. If that port is already used by another application, Webpack will specify a new unused port in the terminal. 
+
 ### OR
 
 ### Run Build with Webpack
