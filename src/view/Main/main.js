@@ -39,16 +39,19 @@ const main = async () => {
                     <stats-data
                         class="confirmed" 
                         title="Confirmed" 
+                        icon="<i class='fa fa-clipboard-check fa-lg'></i>"
                         data=${data.confirmed.value.toLocaleString()}>
                     </stats-data>
                     <stats-data
                         class="deaths" 
-                        title="Deaths" 
+                        title="Deaths"
+                        icon="<i class='fa fa-skull fa-lg'></i>" 
                         data=${data.deaths.value.toLocaleString()}>
                     </stats-data>
                     <stats-data
                         class="recovered" 
-                        title="Recovered" 
+                        title="Recovered"
+                        icon="<i class='fa fa-user-plus fa-lg'></i>" 
                         data=${data.recovered.value.toLocaleString()}>
                     </stats-data>
                 </div>
@@ -57,8 +60,14 @@ const main = async () => {
                     <search-bar></search-bar>
                     <country-detail></country-detail>
                 </div>
+
+                <div class="more-info-covid">
+                    <p><a href="https://www.who.int/emergencies/diseases/novel-coronavirus-2019">
+                        More information about COVID-19 
+                        <i class='fa fa-arrow-right fa-sm'></i>    
+                        </a></p>
+                </div>
                 <footer-bar></footer-bar>
-                
             `
         }
         

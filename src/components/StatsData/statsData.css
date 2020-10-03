@@ -2,6 +2,10 @@
     margin-bottom: 0px;
 }
 
+.stats-data > #icon {
+    margin: 20px 0px;
+}
+
 .stats-data > #data {
     margin-top: 0px;
 }

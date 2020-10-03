@@ -20,7 +20,7 @@ class SearchBar extends HTMLElement {
         `
             <div class="search-container">
                 <input type="text" id="country" placeholder="Search country.." name="country">
-                <button type="submit" id="searchBtn">Search</button>
+                <button type="submit" id="searchBtn"><i class="fa fa-search"></i></button>
             </div>
             <p class="search-example"><i>ex: Indonesia</i></p>
         `

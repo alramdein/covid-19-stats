@@ -5,6 +5,7 @@ class StatsData extends HTMLElement {
         this.title = this.getAttribute("title") || null
         this.data = this.getAttribute("data") || null
         this.class = this.getAttribute("class") || null
+        this.icon = this.getAttribute("icon") || ''
         
         this.render()
     }
@@ -13,8 +14,9 @@ class StatsData extends HTMLElement {
         this.innerHTML = 
         `
         <div class="stats-data ${this.class}">
-            <h3 id="title">${this.title}</h3>
-            <h1 id="data">${this.data}</h1>
+            <p id="title">${this.title}</p>
+            <div id="icon">${this.icon}</div>
+            <h3 id="data">${this.data}</h3>
         </div>
         `
     }

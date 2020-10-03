@@ -1,13 +1,10 @@
 .first-render {
-    color: white;
     text-align: center;
-    margin-top: 10px;
+    margin: 20px;
 }
 
 .country-detail {
-    padding: 20px;
     margin: 20px auto;
-    color: white;
 }
 
 .country-detail > .detail {
@@ -19,6 +16,7 @@
 .error-render {
     color: red;
     text-align: center;
+    margin: 20px;
 }
 
 @media only screen and (max-width: 1140px) {
