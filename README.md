@@ -11,13 +11,14 @@ npm install
 It will install all depencies from `package.json`
 
 ## Run
-### 1. Run in webpack development server
+### Run in Webpack Development Server
 
 ```
 npm run start-dev
 ```
+### OR
 
-### 2. Run build with webpack
+### Run Build with Webpack
 ```
 npm build
 ```
